@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year of the Horse - Premium CNY Hampers</title>
+      <link rel="stylesheet" href="style.css" />
+      <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+      <script src="app.js" defer></script>
+
+</head>
+<body>
+    <div class="decorative-elements cloud1">☁</div>
+    <div class="decorative-elements cloud2">☁</div>
+    <div class="decorative-elements cloud3">☁</div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><img src="materials/logo.png" alt="TMG Logo" class="logo_tmg"> 马年吉祥</div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#promotion">Promotion</a></li>
+                <li><a href="#rewards">TMG Rewards</a></li>
+                <li><a href="#locator">Store Locator</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<section class="hero">
+    <div class="container">
+        <h1 style="font-family: 'Liu Jian Mao Cao', cursive;">恭喜發財</h1>
+        <h2>Year of the Horse 2026</h2>
+        <p>Gallop into prosperity with our exclusive Chinese New Year hampers. Celebrate strength, freedom, and good fortune!</p>
+    </div>
+</section>  
+    </section>
+
+<section class="products">
+  <div class="container">
+    <h2>Premium Fortune Hampers</h2>
+
+    <div class="slider-wrapper">
+      <button class="arrow left" onclick="slideLeft()">&#10094;</button>
+
+      <div class="product-slider" id="productSlider">
+        <div class="product-card">
+          <div class="product-image">🐴</div>
+          <div class="product-info">
+            <h3>Prosperity Gallop</h3>
+            <p>Traditional delicacies, premium teas, and lucky red packets.</p>
+            <div class="price">RM 288</div>
+            <button class="buy-button">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">🐴</div>
+          <div class="product-info">
+            <h3>Prosperity Gallop</h3>
+            <p>Traditional delicacies, premium teas, and lucky red packets.</p>
+            <div class="price">RM 288</div>
+            <button class="buy-button">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">🏇</div>
+          <div class="product-info">
+            <h3>Golden Stride</h3>
+            <p>Luxury assortment with abalone and premium dried goods.</p>
+            <div class="price">RM 588</div>
+            <button class="buy-button">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">🎊</div>
+          <div class="product-info">
+            <h3>Supreme Fortune</h3>
+            <p>Rare delicacies, vintage wines, and premium packaging.</p>
+            <div class="price">RM 988</div>
+            <button class="buy-button">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="arrow right" onclick="slideRight()">&#10095;</button>
+    </div>
+  </div>
+</section>
+<section class="tmg-rewards" id="rewards">
+  <div class="promotion-banner" id="promotion">
+    <div class="container banner-wrapper">
+
+      <img
+        src="materials/Gathering-with-family.jpg"
+        alt="CNY Promotion Banner"
+        class="promotion-image"
+      >
+
+      <div class="banner-text">
+        <h1>Celebrate Chinese New Year Together</h1>
+        <p>
+          Share joy, prosperity, and unforgettable moments with your loved ones
+          this festive season.
+        </p>
+        <a href="#products" class="banner-btn">View Promotions</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+    <footer>
+        <div class="container">
+            <p>🧧 Free Delivery for Orders Above RM500 🧧</p>
+            <p>恭喜發財 | 萬事如意 | 心想事成</p>
+            <p style="margin-top: 20px; font-size: 14px;">© 2026 Year of the Horse CNY Hampers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.parentElement.querySelector('h3').textContent;
+                alert(`🎊 ${productName} added to cart! 恭喜發財!`);
+            });
+        });
+    </script>
+</body>
+</html>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="plugins.js"></script>
+    <script src="main.js"></script>
