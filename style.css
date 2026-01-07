@@ -152,8 +152,8 @@
             text-align: center;
             padding: 60px 0 40px;
             position: relative;
-            margin-bottom: 100px;
-            padding-top: 100px;
+            margin-bottom: 10%;
+            padding-top: 10%;
         }
 
         .hero h1 {
@@ -202,7 +202,7 @@
         }
 
         .products {
-        background: rgba(255, 255, 255, 0.95);
+        background: #EFF3F6;
         padding: 60px 0;
         border-radius: 30px 30px 0 0;
         box-shadow: 0 20px 60px rgba(0,0,0,0.3);
@@ -230,7 +230,8 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 3px solid #FFD700;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
 
         .product-card:hover {
@@ -241,7 +242,6 @@
         .product-image {
             width: 100%;
             height: 300px;
-            background: linear-gradient(135deg, #DC143C, #FF6347);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -250,12 +250,19 @@
             overflow: hidden;
         }
 
+        .product-image img {
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+        display: block;
+        }
+
+
         .product-image::before {
             content: '';
             position: absolute;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
             animation: pulse 2s ease-in-out infinite;
         }
 
@@ -361,10 +368,10 @@
            } 
 
            .slider-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
+        position: relative;
+        display: flex;
+        align-items: center;
+        }
 
 .product-slider {
   display: flex;
@@ -443,7 +450,119 @@
 .banner-btn:hover {
   background: #a91f1f;
 }
+.arrow {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
 
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+.arrow:active {
+  transform: scale(0.95);
+}
+        .banner {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .left-section {
+            flex: 1;
+            background: rgba(143, 8, 17, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right-section {
+            flex: 1;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(143, 8, 17, 0.1);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #a91f1f;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .description {
+            font-size: 1.3em;
+            color: #ffffff;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 3px solid #EFF3F6;
+            color: #a91f1f;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: #ffffff;
+            opacity: 0.8; /* makes whole element semi-transparent */
+            align-self: flex-start;            
+        }
+
+        .btn:hover {
+            background: #a91f1f;
+            color: #EFF3F6;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(201, 76, 58, 0.3);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 100%) {
+            .banner {
+                flex-direction: column;
+            }
+            
+            .left-section {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+        }
            
 
            

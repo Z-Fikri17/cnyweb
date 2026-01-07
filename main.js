@@ -55,3 +55,15 @@
     /************************************************** */
 
     
+        function handleClick() {
+            alert('Button clicked! Add your link or action here.');
+        }
+
+            /************************************************** */
+
+                    document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.parentElement.querySelector('h3').textContent;
+                alert(`🎊 ${productName} added to cart! 恭喜發財!`);
+            });
+        });
