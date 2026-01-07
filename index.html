@@ -8,6 +8,7 @@
       <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
       <script src="app.js" defer></script>
+      <script src="https://cdn.tailwindcss.com"></script>     
 
 </head>
 <body>
@@ -37,7 +38,6 @@
         <p>Happy Chinese New Year! May this festive season bring happiness, good fortune, and success to you and your family.</p>
     </div>
 </section>  
-    </section>
 
 <section class="tmg-rewards" id="rewards">
   <div class="promotion-banner" id="promotion">
@@ -108,26 +108,26 @@
   </div>
 </section>
 
-    <div class="banner">
-        <div class="left-section">
+    <div class="banner flex flex-col md:flex-row">
+        <div class="left-section w-full md:w-1/2">
             <div class="image-placeholder">
                 <img src="materials/kid-cny.jpg" alt="Chinese New Year">
             </div>
         </div>
-        <div class="right-section">
+        <div class="right-section w-full md:w-1/2">
             <p class="subtitle">As we welcome the Chinese New Year, may our home be filled with laughter, love, and togetherness. Wishing our family good health, peace, and endless blessings.</p>
             <p class="description">随着农历新年的到来，愿我们的家充满欢笑、爱与团聚。祝愿我们的家人身体健康、平安喜乐、福运绵长。</p>
             <button class="btn" onclick="handleClick()">Learn More</button>
         </div>
     </div>
 
-    <div class="banner">
-        <div class="right-section">
+    <div class="banner flex flex-col md:flex-row">
+        <div class="right-section w-full md:w-1/2">
             <h1 class="subtitle">Delivery Options Available</h1>
             <p class="description">Choose home delivery for your convenience, or opt for self-pickup at your preferred time.</p>
             <button class="btn" onclick="handleClick()">Learn More</button>
         </div>
-        <div class="left-section">
+        <div class="left-section w-full md:w-1/2">
             <div class="image-placeholder">
                 <img src="materials/lorry-tmg.png">
             </div>
