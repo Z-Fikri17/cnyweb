@@ -67,3 +67,9 @@
                 alert(`🎊 ${productName} added to cart! 恭喜發財!`);
             });
         });
+
+                    /************************************************** */
+
+                            function handleClick() {
+            alert('Learn more about our services!');
+        }
