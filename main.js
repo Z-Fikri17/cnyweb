@@ -63,94 +63,85 @@
   /************************************************** */
 const slider = document.getElementById("productSlider");
 const indicators = document.querySelectorAll("#indicators button");
-
-const gap = 20;
+const cards = document.querySelectorAll(".carousel-item");
+let index = 0;
 let timer;
 
-// ORIGINAL slides
-const originals = Array.from(slider.children);
-const total = originals.length;
+// Calculate how much to scroll to center a specific card
+function centerCard(idx) {
+    const card = cards[idx];
+    const sliderRect = slider.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    
+    // Current scroll position
+    const currentScroll = slider.scrollLeft;
+    
+    // Calculate card's current position relative to slider
+    const cardLeftRelativeToSlider = cardRect.left - sliderRect.left;
+    
+    // Calculate how much to adjust scroll to center the card
+    const sliderCenter = sliderRect.width / 2;
+    const cardCenter = cardRect.width / 2;
+    const scrollAdjustment = cardLeftRelativeToSlider + cardCenter - sliderCenter;
+    
+    slider.scrollTo({
+        left: currentScroll + scrollAdjustment,
+        behavior: "smooth"
+    });
+    
+    index = idx;
+    updateIndicators();
+}
 
-// ---- CLONE ALL SLIDES TO THE RIGHT (ONLY) ----
-originals.forEach(card => {
-  slider.appendChild(card.cloneNode(true));
-});
-
-// Card width
-const cardWidth = originals[0].offsetWidth + gap;
-
-// Start at first slide
-let index = 0;
-slider.scrollLeft = 0;
-
-// ---- INDICATORS ----
+// Update indicators
 function updateIndicators() {
-  const realIndex = index % total;
-  indicators.forEach((dot, i) => {
-    dot.classList.toggle("bg-white", i === realIndex);
-    dot.classList.toggle("bg-white/50", i !== realIndex);
-  });
+    indicators.forEach((dot, i) => {
+        dot.classList.toggle("bg-white", i === index);
+        dot.classList.toggle("bg-white/50", i !== index);
+    });
 }
 
-// ---- FORWARD ONLY NEXT ----
+// Next slide
 function nextSlide() {
-  index++;
-
-  // When reaching end of cloned set → TELEPORT FORWARD
-  if (index >= total * 2) {
-    index = total;
-    slider.scrollLeft = index * cardWidth;
-  }
-
-  slider.scrollTo({
-    left: index * cardWidth,
-    behavior: "smooth",
-  });
-
-  updateIndicators();
+    index = (index + 1) % cards.length;
+    centerCard(index);
 }
 
-// ---- PREVIOUS (OPTIONAL, STILL FORWARD SAFE) ----
+// Previous slide
 function previousSlide() {
-  index--;
-
-  if (index < 0) {
-    index = total - 1;
-    slider.scrollLeft = index * cardWidth;
-  }
-
-  slider.scrollTo({
-    left: index * cardWidth,
-    behavior: "smooth",
-  });
-
-  updateIndicators();
+    index = (index - 1 + cards.length) % cards.length;
+    centerCard(index);
 }
 
-// ---- INDICATOR CLICK ----
+// Go to slide via indicator
 function goToSlide(i) {
-  index = i;
-  slider.scrollTo({
-    left: index * cardWidth,
-    behavior: "smooth",
-  });
-  updateIndicators();
-  resetAuto();
+    centerCard(i);
+    stopAutoTemporary();
 }
 
-// ---- AUTO SLIDE ----
+// Auto-slide functions
 function startAuto() {
-  timer = setInterval(nextSlide, 2000);
+    timer = setInterval(nextSlide, 4000);
 }
 
-function resetAuto() {
-  clearInterval(timer);
-  startAuto();
+function stopAutoTemporary() {
+    clearInterval(timer);
+    setTimeout(startAuto, 3000);
 }
 
+// Initial setup
+setTimeout(() => {
+    centerCard(0);
+    startAuto();
+}, 100);
+
+// Pause auto on hover
 slider.addEventListener("mouseenter", () => clearInterval(timer));
 slider.addEventListener("mouseleave", startAuto);
 
-// INIT
-updateIndicators();
-startAuto();
+// Recalculate on resize
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => centerCard(index), 150);
+});

@@ -11,9 +11,9 @@
                font-family: 'Georgia', serif,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #FF6347 100%);
                color: #2c1810;
-    position: relative;
-    isolation: isolate; /* 🔥 IMPORTANT */
-        }
+                position: relative;
+                isolation: isolate; /* 🔥 IMPORTANT */
+                    }
 
         body::before {
             content: '';
