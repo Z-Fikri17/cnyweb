@@ -1,4 +1,33 @@
-        const ssViewAnimate = function() {
+/*** NAVBAR */    
+
+// main.js — manages everything for your site
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navbarEl = document.getElementById("navbar");
+  if (!navbarEl) return; // skip if no placeholder
+
+  fetch("navbar.html") // adjust path if needed
+    .then(res => {
+      if (!res.ok) throw new Error("Navbar fetch failed");
+      return res.text();
+    })
+    .then(html => {
+      navbarEl.innerHTML = html;
+
+      // optional: highlight current page
+      navbarEl.querySelectorAll("a").forEach(a => {
+        if (a.pathname === location.pathname) {
+          a.style.textDecoration = "underline";
+          a.style.fontWeight = "bold";
+        }
+      });
+    })
+    .catch(err => console.error("Navbar error:", err));
+});
+
+
+/***** */
+    const ssViewAnimate = function() {
             const blocks = document.querySelectorAll("[data-animate-block]");
             
             function viewportAnimation() {
@@ -135,3 +164,60 @@ window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => centerCard(index), 150);
 });
+
+/****** */
+/* ==========================
+   PRODUCT DATA (ONE SOURCE)
+========================== */
+
+    function productsApp() {
+      return {
+        products: [
+          {
+            id: 1,
+            name: "Luxury Set 1",
+            price: "RM250",
+            image: "materials/hamper2.png",
+            details: ["Detail 1", "Detail 2", "Detail 3", "Detail 4"],
+            stock: 10,
+            sold: 2
+          },
+          {
+            id: 2,
+            name: "Premium Set 2",
+            price: "RM180",
+            image: "materials/hamper3.png",
+            details: ["Detail A", "Detail B", "Detail C", "Detail D"],
+            stock: 15,
+            sold: 5
+          },
+          {
+            id: 3,
+            name: "Deluxe Set 3",
+            price: "RM300",
+            image: "materials/hamper4.png",
+            details: ["Detail X", "Detail Y", "Detail Z"],
+            stock: 5,
+            sold: 1
+          }
+        ],
+        product: null,
+
+        init() {
+          // Get id from URL: ?id=1
+          const params = new URLSearchParams(window.location.search);
+          const id = parseInt(params.get("id"));
+
+          // Find product with matching id
+          this.product = this.products.find(p => p.id === id) || null;
+        }
+      }
+    }
+
+/**** */
+
+    fetch("navbar.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("navbar").innerHTML = html;
+      });
