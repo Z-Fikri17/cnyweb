@@ -121,7 +121,7 @@
         transform: scale(0.5);           /* shrink page to 50% */
         transform-origin: top left;      /* scale from top-left corner */
         width: 200%;                     /* compensate for scaling */
-        height: auto;
+        height:min-content;
         overflow-x: hidden;              /* prevent horizontal scroll */
     }
 }
