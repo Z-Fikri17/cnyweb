@@ -13,6 +13,15 @@
                color: #2c1810;
                 position: relative;
                 isolation: isolate; /* 🔥 IMPORTANT */
+                { margin: 0; padding: 0; }
+@media (min-width: 728px) and (max-width: 1150px) {
+/* enter large tablet style overrides here */
+}
+@media (min-width: 420px) and (max-width: 727px) {
+/* enter medium tablet and large phone style overrides here */
+}
+@media (min-width: 1px) and (max-width: 419px) {
+/* enter small devices and phone style overrides here */
                     }
 
         body::before {
