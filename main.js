@@ -41,16 +41,19 @@
 
   /************************************************** */
 
-  const slider = document.getElementById("productSlider");
-  const slideAmount = 300; // px per click
+        function slideLeft() {
+            const slider = document.getElementById('productSlider');
+            slider.scrollBy({ left: -300, behavior: 'smooth' });
+        }
 
-  function slideLeft() {
-    slider.scrollLeft -= slideAmount;
-  }
+        function slideRight() {
+            const slider = document.getElementById('productSlider');
+            slider.scrollBy({ left: 300, behavior: 'smooth' });
+        }
 
-  function slideRight() {
-    slider.scrollLeft += slideAmount;
-  }
+        function handleClick() {
+            alert('Learn more clicked!');
+        }
 
     /************************************************** */
 
@@ -70,6 +73,6 @@
 
                     /************************************************** */
 
-                            function handleClick() {
+       function handleClick() {
             alert('Learn more about our services!');
         }

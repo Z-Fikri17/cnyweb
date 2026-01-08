@@ -4,145 +4,248 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Year of the Horse - Premium CNY Hampers</title>
-      <link rel="stylesheet" href="style.css" />
-      <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-      <script src="app.js" defer></script>
-      <script src="https://cdn.tailwindcss.com"></script>     
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+   
 </head>
-<body>
-    <div class="decorative-elements cloud1">☁</div>
-    <div class="decorative-elements cloud2">☁</div>
-    <div class="decorative-elements cloud3">☁</div>
+<body class="m-0 p-0 box-border bg-gradient-to-br from-[#8B0000] via-[#DC143C] to-[#FF6347] text-[#2c1810] overflow-x-hidden relative">
+    <!-- Decorative Elements -->     
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo"><img src="materials/logo.png" alt="TMG Logo" class="logo_tmg"> 马年吉祥</div>
+    <div class="fixed text-[100px] opacity-10 pointer-events-none z-[10] top-[20%] left-[15%] animate-float-1">☁</div>
+    <div class="fixed text-[100px] opacity-10 pointer-events-none z-[10] top-[50%] left-[30%] animate-float-3">☁</div>
+    <div class="fixed text-[100px] opacity-10 pointer-events-none z-[10] top-[80%] left-[2%] animate-float-3">☁</div>
+    <div class="fixed text-[100px] opacity-10 pointer-events-none z-[10] top-[80%] right-[10%] animate-float-2">☁</div>
+    <div class="fixed text-[100px] opacity-10 pointer-events-none z-[10] top-[20%] right-[20%] animate-float-2">☁</div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-[0_2px_8px_rgba(0,0,0,0.1)] sticky top-0 z-[1000]">
+        <div class="flex justify-between items-center h-[85px] max-md:h-auto max-md:p-4 max-md:flex-col max-md:items-center">
+            <div class="text-[32px] font-bold text-[#FFD700] drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)] flex items-center gap-2 max-md:text-2xl">
+                <img src="materials/logo.png" alt="TMG Logo" class="w-[120px] h-[66px]"> 马年吉祥
+            </div>
             
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#promotion">Promotion</a></li>
-                <li><a href="#rewards">TMG Rewards</a></li>
-                <li><a href="#locator">Store Locator</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="flex list-none gap-10 items-center max-md:gap-5 max-md:text-sm max-md:flex-wrap max-md:justify-center max-md:text-center" id="navMenu">
+                <li><a href="index.html" class="no-underline text-[#333] text-[15px] font-medium transition-colors duration-300 relative hover:text-[#e31e24] max-md:text-[13px]">Home</a></li>
+                <li><a href="#promotion" class="no-underline text-[#333] text-[15px] font-medium transition-colors duration-300 relative hover:text-[#e31e24] max-md:text-[13px]">Promotion</a></li>
+                <li><a href="#rewards" class="no-underline text-[#333] text-[15px] font-medium transition-colors duration-300 relative hover:text-[#e31e24] max-md:text-[13px]">TMG Rewards</a></li>
+                <li><a href="#locator" class="no-underline text-[#333] text-[15px] font-medium transition-colors duration-300 relative hover:text-[#e31e24] max-md:text-[13px]">Store Locator</a></li>
+                <li><a href="#about" class="no-underline text-[#333] text-[15px] font-medium transition-colors duration-300 relative hover:text-[#e31e24] max-md:text-[13px]">About</a></li>
+                <li><a href="#contact" class="no-underline text-[#333] text-[15px] font-medium transition-colors duration-300 relative hover:text-[#e31e24] max-md:text-[13px]">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-<section class="hero">
-    <div class="container">
-        <h1 style="font-family: 'Liu Jian Mao Cao', cursive;">恭喜发财</h1>
-        <h2>Year of the Horse 2026</h2>
-        <p>Happy Chinese New Year! May this festive season bring happiness, good fortune, and success to you and your family.</p>
-    </div>
-</section>  
-
-<section class="tmg-rewards" id="rewards">
-  <div class="promotion-banner" id="promotion">
-    <div class="container banner-wrapper">
-      <img src="materials/Gathering-with-family.jpg" alt="CNY Promotion Banner" class="promotion-image" >
-      <div class="banner-text">
-        <h1>Delightful Chinese New Year Hampers</h1>
-        <p>
-          Make your family and friends smile this Chinese New Year with gorgeous gift hampers! Filled with goodies and lucky trinkets, delivered same-day for free.
-        </p>
-        <a href="#products" class="banner-btn">View Promotions</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="products">
-  <div class="container">
-    <h2>Premium Fortune Hampers</h2>
-
-    <div class="slider-wrapper">
-      <button class="arrow left" onclick="slideLeft()">&#10094;</button>
-      <div class="product-slider" id="productSlider">
-        <div class="product-card">
-          <div class="product-image"><img src="materials\hamper1.png"></div>
-          <div class="product-info">
-            <h3>Prosperity Gallop</h3>
-            <p>Traditional delicacies, premium teas, and lucky red packets.</p>
-            <div class="price">RM 288</div>
-            <button class="buy-button">Add to Cart</button>
-          </div>
+    <!-- Hero Section -->
+    <section class="text-center py-16 px-0 relative mb-[10%] pt-[10%] max-md:py-8">
+        <div class="max-w-[1400px] mx-auto max-md:px-5">
+            <h1 class="text-7xl text-[#FFD700] drop-shadow-[3px_3px_6px_rgba(0,0,0,0.7)] mb-2.5 animate-fadeInDown max-md:text-4xl" style="font-family: 'Liu Jian Mao Cao', cursive;">恭喜发财</h1>
+            <h2 class="text-5xl text-white drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)] mb-5 animate-fadeInDown-delay max-md:text-3xl">Year of the Horse 2026</h2>
+            <p class="text-2xl text-white max-w-[800px] font-bold mx-auto mb-7 drop-shadow-[1px_1px_2px_rgba(0,0,0,0.5)] animate-fadeIn max-md:text-lg">Happy Chinese New Year! May this festive season bring happiness, good fortune, and success to you and your family.</p>
         </div>
+    </section>
 
-        <div class="product-card">
-          <div class="product-image"><img src="materials\hamper1.png"></div>
-          <div class="product-info">
-            <h3>Prosperity Gallop</h3>
-            <p>Traditional delicacies, premium teas, and lucky red packets.</p>
-            <div class="price">RM 288</div>
-            <button class="buy-button">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image"><img src="materials\hamper1.png"></div>
-          <div class="product-info">
-            <h3>Prosperity Gallop</h3>
-            <p>Traditional delicacies, premium teas, and lucky red packets.</p>
-            <div class="price">RM 288</div>
-            <button class="buy-button">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image"><img src="materials\hamper1.png"></div>
-          <div class="product-info">
-            <h3>Prosperity Gallop</h3>
-            <p>Traditional delicacies, premium teas, and lucky red packets.</p>
-            <div class="price">RM 288</div>
-            <button class="buy-button">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <button class="arrow right" onclick="slideRight()">&#10095;</button>
-    </div>
-  </div>
-</section>
-
-    <div class="banner flex flex-col md:flex-row">
-        <div class="left-section w-full md:w-1/2">
-            <div class="image-placeholder">
-                <img src="materials/kid-cny.jpg" alt="Chinese New Year">
+    <!-- Promotion Banner -->
+    <section id="rewards">
+        <div id="promotion" class="max-w-[1400px] mx-auto relative">
+            <img src="materials/Gathering-with-family.jpg" alt="CNY Promotion Banner" class="w-full h-auto block rounded-t-[30px]">
+            <div class="absolute top-1/2 left-[2%] -translate-y-1/2 max-w-[420px] text-[#222] bg-white/50 backdrop-blur-md p-6 rounded-[14px] max-md:w-full max-md:text-center max-md:px-4">
+                <h2 class="text-[32px] font-bold mb-3 text-[#a91f1f]">Delightful Chinese New Year Hampers</h2>
+                <p class="text-base leading-[1.6] mb-4">Make your family and friends smile this Chinese New Year with gorgeous gift hampers! Filled with goodies and lucky trinkets, delivered same-day for free.</p>
+                <a href="#products" class="inline-block py-2.5 px-5 bg-[#c62828] text-white no-underline rounded-md font-semibold hover:bg-[#a91f1f]">View Promotions</a>
             </div>
         </div>
-        <div class="right-section w-full md:w-1/2">
-            <p class="subtitle">As we welcome the Chinese New Year, may our home be filled with laughter, love, and togetherness. Wishing our family good health, peace, and endless blessings.</p>
-            <p class="description">随着农历新年的到来，愿我们的家充满欢笑、爱与团聚。祝愿我们的家人身体健康、平安喜乐、福运绵长。</p>
-            <button class="btn" onclick="handleClick()">Learn More</button>
+    </section>
+
+    <!-- Products Section -->
+    <section >
+        <div class="max-w-[1400px] mx-auto ">
+            <h2 class="text-center text-5xl text-white mb-10 drop-shadow-[1px_1px_2px_rgba(0,0,0,0.1)] max-md:text-4xl">Premium Fortune Hampers</h2>
+
+            <div class="relative flex items-center">
+                <button class="bg-black/50 border-none text-white text-2xl cursor-pointer rounded-full w-10 h-10 mr-2.5 transition-all duration-300 hover:bg-black/80 hover:scale-110 active:scale-95 max-md:hidden" onclick="slideLeft()">&#10094;</button>
+                
+                <div class="pb-[10px] flex gap-5 overflow-x-hidden w-full max-md:overflow-x-auto max-md:gap-2.5 max-md:py-2.5" id="productSlider">
+    <div class="relative mt-[20px] w-[30%] h-[470px] rounded-[32px] overflow-hidden shadow-2xl shadow-2xl transition-transform hover:scale-[1.02] duration-300">        
+        <img src="materials/hamper2.png" alt="Cabin House" class="absolute inset-0 w-full h-full object-cover bg-white">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1a2118] via-[#1a2118]/50 via-40% to-transparent"></div>
+        <div class="absolute top-6 left-6">
+            <div class="bg-white px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                <svg class="w-3.5 h-3.5 text-yellow-500 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <span class="text-xs font-semibold text-gray-800 tracking-wide">Prime Pick</span>
+            </div>
+        </div>
+                <div class="absolute bottom-0 w-full p-7 text-white z-10">                    
+                    <div class="mb-2">
+                        <h2 class="text-3xl font-semibold tracking-tight mb-2">
+                            RM250,000
+                        </h2>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Luxury Set<br>
+                            - Detail 1<br>
+                            - Detail 2<br>
+                            - Detail 3<br>
+                            - Detail 4<br>
+                        </p>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 flex justify-between items-center text-sm">
+                        <div class="text-white-400">
+                            10 <span class="text-white decoration-1 decoration-white-400">Stock</span>
+                        </div>
+                        <div class="text-white-500">
+                            2 Sold Out
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div class="relative mt-[20px] w-[30%] h-[470px] rounded-[32px] overflow-hidden shadow-2xl shadow-2xl transition-transform hover:scale-[1.02] duration-300">        
+        <img src="materials/hamper2.png" alt="Cabin House" class="absolute inset-0 w-full h-full object-cover bg-white">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1a2118] via-[#1a2118]/50 via-40% to-transparent"></div>
+        <div class="absolute top-6 left-6">
+            <div class="bg-white px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                <svg class="w-3.5 h-3.5 text-yellow-500 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <span class="text-xs font-semibold text-gray-800 tracking-wide">Prime Pick</span>
+            </div>
+        </div>
+                <div class="absolute bottom-0 w-full p-7 text-white z-10">                    
+                    <div class="mb-2">
+                        <h2 class="text-3xl font-semibold tracking-tight mb-2">
+                            RM250,000
+                        </h2>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Luxury Set<br>
+                            - Detail 1<br>
+                            - Detail 2<br>
+                            - Detail 3<br>
+                            - Detail 4<br>
+                        </p>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 flex justify-between items-center text-sm">
+                        <div class="text-white-400">
+                            10 <span class="text-white decoration-1 decoration-white-400">Stock</span>
+                        </div>
+                        <div class="text-white-500">
+                            2 Sold Out
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div class="relative mt-[20px] w-[30%] h-[470px] rounded-[32px] overflow-hidden shadow-2xl shadow-2xl transition-transform hover:scale-[1.02] duration-300">        
+        <img src="materials/hamper2.png" alt="Cabin House" class="absolute inset-0 w-full h-full object-cover bg-white">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1a2118] via-[#1a2118]/50 via-40% to-transparent"></div>
+        <div class="absolute top-6 left-6">
+            <div class="bg-white px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                <svg class="w-3.5 h-3.5 text-yellow-500 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <span class="text-xs font-semibold text-gray-800 tracking-wide">Prime Pick</span>
+            </div>
+        </div>
+                <div class="absolute bottom-0 w-full p-7 text-white z-10">                    
+                    <div class="mb-2">
+                        <h2 class="text-3xl font-semibold tracking-tight mb-2">
+                            RM250,000
+                        </h2>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Luxury Set<br>
+                            - Detail 1<br>
+                            - Detail 2<br>
+                            - Detail 3<br>
+                            - Detail 4<br>
+                        </p>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 flex justify-between items-center text-sm">
+                        <div class="text-white-400">
+                            10 <span class="text-white decoration-1 decoration-white-400">Stock</span>
+                        </div>
+                        <div class="text-white-500">
+                            2 Sold Out
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div class="relative mt-[20px] w-[30%] h-[470px] rounded-[32px] overflow-hidden shadow-2xl shadow-2xl transition-transform hover:scale-[1.02] duration-300">        
+        <img src="materials/hamper2.png" alt="Cabin House" class="absolute inset-0 w-full h-full object-cover bg-white">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1a2118] via-[#1a2118]/50 via-40% to-transparent"></div>
+        <div class="absolute top-6 left-6">
+            <div class="bg-white px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                <svg class="w-3.5 h-3.5 text-yellow-500 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <span class="text-xs font-semibold text-gray-800 tracking-wide">Prime Pick</span>
+            </div>
+        </div>
+                <div class="absolute bottom-0 w-full p-7 text-white z-10">                    
+                    <div class="mb-2">
+                        <h2 class="text-3xl font-semibold tracking-tight mb-2">
+                            RM250,000
+                        </h2>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Luxury Set<br>
+                            - Detail 1<br>
+                            - Detail 2<br>
+                            - Detail 3<br>
+                            - Detail 4<br>
+                        </p>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 flex justify-between items-center text-sm">
+                        <div class="text-white-400">
+                            10 <span class="text-white decoration-1 decoration-white-400">Stock</span>
+                        </div>
+                        <div class="text-white-500">
+                            2 Sold Out
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+
+                <button class="bg-black/50 border-none text-white text-2xl cursor-pointer rounded-full w-10 h-10 ml-2.5 transition-all duration-300 hover:bg-black/80 hover:scale-110 active:scale-95 max-md:hidden" onclick="slideRight()">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner 1 -->
+    <div class="flex min-h-screen overflow-hidden flex-col md:flex-row max-md:flex-col mb-5">
+        <div class="flex-1 bg-[rgba(143,8,17,0.1)] flex items-center justify-center w-full md:w-1/2 max-md:w-full max-md:p-2.5 max-md:text-center">
+            <div class="w-full h-full overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.1)]">
+                <img src="materials/kid-cny.jpg" alt="Chinese New Year" class="w-full h-full object-cover max-md:w-full max-md:h-auto">
+            </div>
+        </div>
+        <div class="flex-1 py-16 px-0 flex flex-col justify-center bg-[rgba(143,8,17,0.1)] w-full md:w-1/2 max-md:w-full max-md:p-2.5 max-md:text-center">
+            <p class="font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-2xl text-white mb-5 leading-[1.6] drop-shadow-[3px_3px_6px_rgba(0,0,0,0.7)] p-5 max-md:text-base">As we welcome the Chinese New Year, may our home be filled with laughter, love, and togetherness. Wishing our family good health, peace, and endless blessings.</p>
+            <p class="font-sans text-xl text-white mb-10 leading-[1.6] drop-shadow-[3px_3px_6px_rgba(0,0,0,0.7)] p-5 max-md:text-base">随着农历新年的到来,愿我们的家充满欢笑、爱与团聚。祝愿我们的家人身体健康、平安喜乐、福运绵长。</p>
+            <button class="block py-4 px-10 border-[3px] border-[#EFF3F6] text-[#a91f1f] no-underline text-lg font-bold transition-all duration-300 cursor-pointer bg-white opacity-80 mx-auto hover:bg-[#a91f1f] hover:text-[#EFF3F6] hover:-translate-y-0.5 hover:shadow-[0_5px_15px_rgba(201,76,58,0.3)] max-md:w-4/5 max-md:max-w-[300px] max-md:my-2.5 max-md:mx-auto" onclick="handleClick()">Learn More</button>
         </div>
     </div>
 
-    <div class="banner flex flex-col md:flex-row">
-        <div class="right-section w-full md:w-1/2">
-            <h1 class="subtitle">Delivery Options Available</h1>
-            <p class="description">Choose home delivery for your convenience, or opt for self-pickup at your preferred time.</p>
-            <button class="btn" onclick="handleClick()">Learn More</button>
+    <!-- Banner 2 -->
+    <div class="flex min-h-screen overflow-hidden flex-col md:flex-row max-md:flex-col mb-5">
+        <div class="flex-1 py-16 px-0 flex flex-col justify-center bg-[rgba(143,8,17,0.1)] w-full md:w-1/2 max-md:w-full max-md:p-2.5 max-md:text-center">
+            <h1 class="text-[3.5em] text-[#a91f1f] leading-[1.1] mb-7 font-bold font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-white drop-shadow-[3px_3px_6px_rgba(0,0,0,0.7)] p-5 max-md:text-[2.5em]">Delivery Options Available</h1>
+            <p class="font-sans text-xl text-white mb-10 leading-[1.6] drop-shadow-[3px_3px_6px_rgba(0,0,0,0.7)] p-5 max-md:text-base">Choose home delivery for your convenience, or opt for self-pickup at your preferred time.</p>
+            <button class="block py-4 px-10 border-[3px] border-[#EFF3F6] text-[#a91f1f] no-underline text-lg font-bold transition-all duration-300 cursor-pointer bg-white opacity-80 mx-auto hover:bg-[#a91f1f] hover:text-[#EFF3F6] hover:-translate-y-0.5 hover:shadow-[0_5px_15px_rgba(201,76,58,0.3)] max-md:w-4/5 max-md:max-w-[300px] max-md:my-2.5 max-md:mx-auto" onclick="handleClick()">Learn More</button>
         </div>
-        <div class="left-section w-full md:w-1/2">
-            <div class="image-placeholder">
-                <img src="materials/lorry-tmg.png">
+        <div class="flex-1 bg-[rgba(143,8,17,0.1)] flex items-center justify-center w-full md:w-1/2 max-md:w-full max-md:p-2.5 max-md:text-center">
+            <div class="w-full h-full overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.1)]">
+                <img src="materials/lorry-tmg.png" class="w-full h-full object-cover max-md:w-full max-md:h-auto">
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="container">
+    <!-- Footer -->
+    <footer class="text-center py-10 text-white text-base">
+        <div class="max-w-[1400px] mx-auto">
             <p>恭喜發財 | 萬事如意 | 心想事成</p>
-            <p style="margin-top: 20px; font-size: 14px;">© 2026 Year of the Horse CNY Hampers. All Rights Reserved.</p>
+            <p class="mt-5 text-sm max-md:text-[0.9rem]">© 2026 Year of the Horse CNY Hampers. All Rights Reserved.</p>
         </div>
     </footer>
-
 </body>
 </html>
+
 
     <!-- Java Script
     ================================================== -->
