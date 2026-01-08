@@ -62,7 +62,6 @@
         }
   /************************************************** */
 const slider = document.getElementById("productSlider");
-const indicators = document.querySelectorAll("#indicators button");
 const cards = document.querySelectorAll(".carousel-item");
 let index = 0;
 let timer;
@@ -90,15 +89,6 @@ function centerCard(idx) {
     });
     
     index = idx;
-    updateIndicators();
-}
-
-// Update indicators
-function updateIndicators() {
-    indicators.forEach((dot, i) => {
-        dot.classList.toggle("bg-white", i === index);
-        dot.classList.toggle("bg-white/50", i !== index);
-    });
 }
 
 // Next slide
