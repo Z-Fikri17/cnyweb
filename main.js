@@ -41,22 +41,6 @@
 
   /************************************************** */
 
-        function slideLeft() {
-            const slider = document.getElementById('productSlider');
-            slider.scrollBy({ left: -300, behavior: 'smooth' });
-        }
-
-        function slideRight() {
-            const slider = document.getElementById('productSlider');
-            slider.scrollBy({ left: 300, behavior: 'smooth' });
-        }
-
-        function handleClick() {
-            alert('Learn more clicked!');
-        }
-
-    /************************************************** */
-
     
         function handleClick() {
             alert('Button clicked! Add your link or action here.');
@@ -77,82 +61,96 @@
             alert('Learn more about our services!');
         }
   /************************************************** */
-         const slider = document.getElementById('productSlider');
-        const indicators = document.querySelectorAll('#indicators button');
-        let currentSlide = 0;
-        const totalSlides = 4;
-        let autoSlideInterval;
+const slider = document.getElementById("productSlider");
+const indicators = document.querySelectorAll("#indicators button");
 
-        // Calculate scroll amount (card width + gap)
-        function getScrollAmount() {
-            const card = document.querySelector('.carousel-item');
-            const cardWidth = card.offsetWidth;
-            const gap = 20; // gap-5 = 20px
-            return cardWidth + gap;
-        }
+const gap = 20;
+let timer;
 
-        // Update active indicator
-        function updateIndicators() {
-            indicators.forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.classList.remove('bg-white/50');
-                    indicator.classList.add('bg-white');
-                    indicator.setAttribute('aria-current', 'true');
-                } else {
-                    indicator.classList.remove('bg-white');
-                    indicator.classList.add('bg-white/50');
-                    indicator.setAttribute('aria-current', 'false');
-                }
-            });
-        }
+// ORIGINAL slides
+const originals = Array.from(slider.children);
+const total = originals.length;
 
-        // Go to specific slide
-        function goToSlide(index) {
-            currentSlide = index;
-            const scrollAmount = getScrollAmount();
-            slider.scrollTo({
-                left: scrollAmount * index,
-                behavior: 'smooth'
-            });
-            updateIndicators();
-            resetAutoSlide();
-        }
+// ---- CLONE ALL SLIDES TO THE RIGHT (ONLY) ----
+originals.forEach(card => {
+  slider.appendChild(card.cloneNode(true));
+});
 
-        // Next slide
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            goToSlide(currentSlide);
-        }
+// Card width
+const cardWidth = originals[0].offsetWidth + gap;
 
-        // Previous slide
-        function previousSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            goToSlide(currentSlide);
-        }
+// Start at first slide
+let index = 0;
+slider.scrollLeft = 0;
 
-        // Auto slide functionality
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                nextSlide();
-            }, 4000); // Change slide every 4 seconds
-        }
+// ---- INDICATORS ----
+function updateIndicators() {
+  const realIndex = index % total;
+  indicators.forEach((dot, i) => {
+    dot.classList.toggle("bg-white", i === realIndex);
+    dot.classList.toggle("bg-white/50", i !== realIndex);
+  });
+}
 
-        // Reset auto slide timer
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            startAutoSlide();
-        }
+// ---- FORWARD ONLY NEXT ----
+function nextSlide() {
+  index++;
 
-        // Pause auto slide on hover
-        slider.addEventListener('mouseenter', () => {
-            clearInterval(autoSlideInterval);
-        });
+  // When reaching end of cloned set → TELEPORT FORWARD
+  if (index >= total * 2) {
+    index = total;
+    slider.scrollLeft = index * cardWidth;
+  }
 
-        // Resume auto slide on mouse leave
-        slider.addEventListener('mouseleave', () => {
-            startAutoSlide();
-        });
+  slider.scrollTo({
+    left: index * cardWidth,
+    behavior: "smooth",
+  });
 
-        // Initialize
-        updateIndicators();
-        startAutoSlide();
+  updateIndicators();
+}
+
+// ---- PREVIOUS (OPTIONAL, STILL FORWARD SAFE) ----
+function previousSlide() {
+  index--;
+
+  if (index < 0) {
+    index = total - 1;
+    slider.scrollLeft = index * cardWidth;
+  }
+
+  slider.scrollTo({
+    left: index * cardWidth,
+    behavior: "smooth",
+  });
+
+  updateIndicators();
+}
+
+// ---- INDICATOR CLICK ----
+function goToSlide(i) {
+  index = i;
+  slider.scrollTo({
+    left: index * cardWidth,
+    behavior: "smooth",
+  });
+  updateIndicators();
+  resetAuto();
+}
+
+// ---- AUTO SLIDE ----
+function startAuto() {
+  timer = setInterval(nextSlide, 2000);
+}
+
+function resetAuto() {
+  clearInterval(timer);
+  startAuto();
+}
+
+slider.addEventListener("mouseenter", () => clearInterval(timer));
+slider.addEventListener("mouseleave", startAuto);
+
+// INIT
+updateIndicators();
+startAuto();
