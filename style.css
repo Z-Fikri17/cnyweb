@@ -112,4 +112,16 @@
         .product-slider {
             scroll-behavior: smooth;
         }
-        
+        /* =====================================================
+   SCALE DESKTOP PAGE TO MOBILE VIEW
+   Keeps all layout intact and visible
+   ===================================================== */
+@media (max-width: 768px) {
+    #page-wrapper {
+        transform: scale(0.5);           /* shrink page to 50% */
+        transform-origin: top left;      /* scale from top-left corner */
+        width: 200%;                     /* compensate for scaling */
+        height: auto;
+        overflow-x: hidden;              /* prevent horizontal scroll */
+    }
+}
