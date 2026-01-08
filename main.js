@@ -186,7 +186,7 @@ window.addEventListener('resize', () => {
             id: 2,
             name: "Premium Set 2",
             price: "RM180",
-            image: "materials/hamper3.png",
+            image: "materials/hamper2.png",
             details: ["Detail A", "Detail B", "Detail C", "Detail D"],
             stock: 15,
             sold: 5
@@ -195,7 +195,7 @@ window.addEventListener('resize', () => {
             id: 3,
             name: "Deluxe Set 3",
             price: "RM300",
-            image: "materials/hamper4.png",
+            image: "materials/hamper2.png",
             details: ["Detail X", "Detail Y", "Detail Z"],
             stock: 5,
             sold: 1
