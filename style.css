@@ -23,6 +23,7 @@
 @media (min-width: 1px) and (max-width: 419px) {
 /* enter small devices and phone style overrides here */
                     }
+                }
 
         body::before {
             content: '';
