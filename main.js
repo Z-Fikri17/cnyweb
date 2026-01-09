@@ -221,3 +221,7 @@ window.addEventListener('resize', () => {
       .then(html => {
         document.getElementById("navbar").innerHTML = html;
       });
+
+/****** */
+
+
