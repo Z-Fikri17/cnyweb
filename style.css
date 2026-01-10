@@ -183,3 +183,18 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
+/* MAIN IMAGE ZOOM — ZERO UI CHANGE */
+.flex-1 {
+  overflow: hidden;
+}
+.flex-1 img { 
+  transition: transform 0.15s ease;
+  cursor: zoom-in;
+  will-change: transform;
+}
+
+
+
+
+

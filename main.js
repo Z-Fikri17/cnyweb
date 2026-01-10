@@ -169,59 +169,116 @@ window.addEventListener('resize', () => {
 /* ==========================
    PRODUCT DATA (ONE SOURCE)
 ========================== */
-
-    function productsApp() {
-      return {
-        products: [
-          {
-            id: 1,
-            name: "Luxury Set 1",
-            price: "RM250",
-            image: "materials/hamper2.png",
-            details: ["Detail 1", "Detail 2", "Detail 3", "Detail 4"],
-            stock: 10,
-            sold: 2
-          },
-          {
-            id: 2,
-            name: "Premium Set 2",
-            price: "RM180",
-            image: "materials/hamper2.png",
-            details: ["Detail A", "Detail B", "Detail C", "Detail D"],
-            stock: 15,
-            sold: 5
-          },
-          {
-            id: 3,
-            name: "Deluxe Set 3",
-            price: "RM300",
-            image: "materials/hamper2.png",
-            details: ["Detail X", "Detail Y", "Detail Z"],
-            stock: 5,
-            sold: 1
-          }
-        ],
-        product: null,
-
-        init() {
-          // Get id from URL: ?id=1
-          const params = new URLSearchParams(window.location.search);
-          const id = parseInt(params.get("id"));
-
-          // Find product with matching id
-          this.product = this.products.find(p => p.id === id) || null;
-        }
+function productsApp() {
+  return {
+    products: [
+      {
+        id: 1,
+        name: "Luxury Set 1",
+        price: "RM250",
+        image: "materials/hamper2.png",
+        details: ["Detail 1", "Detail 2", "Detail 3", "Detail 4"],
+        stock: 10,
+        sold: 2
+      },
+      {
+        id: 2,
+        name: "Premium Set 2",
+        price: "RM180",
+        image: "materials/hamper2.png",
+        details: ["Detail A", "Detail B", "Detail C", "Detail D"],
+        stock: 15,
+        sold: 5
+      },
+      {
+        id: 3,
+        name: "Deluxe Set 3",
+        price: "RM300",
+        image: "materials/hamper2.png",
+        details: ["Detail X", "Detail Y", "Detail Z"],
+        stock: 5,
+        sold: 1
       }
-    }
-
-/**** */
-
-    fetch("navbar.html")
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById("navbar").innerHTML = html;
+    ],
+    product: null,
+    init() {
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get("id"));
+      this.product = this.products.find(p => p.id === id) || this.products[0];
+      
+      // Initialize checkout after Alpine renders
+      this.$nextTick(() => {
+        this.initCheckout();
+        this.initZoom();
       });
+    },
+    initCheckout() {
+      const checkoutBtn = document.getElementById('checkoutBtn');
+      const modal = document.getElementById('customerModal');
+      const closeModal = document.getElementById('closeModal');
+      
+      if (!checkoutBtn || !modal || !closeModal) {
+        console.error('Elements not found yet');
+        return;
+      }
+      
+      const HITPAY_BASE_URL = 'https://securecheckout.sandbox.hit-pay.com/payment-request/@megah-holding';
+      
+      checkoutBtn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+      });
+      
+      closeModal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+      
+      const form = document.getElementById('customerForm');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const phone = formData.get('phone');
+        const address = formData.get('address');
+        
+        const notes = `Name: ${name}\nPhone: ${phone}\nAddress: ${address}`;
+        const encodedNotes = encodeURIComponent(notes);
+        const finalURL = HITPAY_BASE_URL + `?notes=${encodedNotes}`;
+        
+        window.open(finalURL, '_blank');
+        modal.classList.add('hidden');
+      });
+    },
+    initZoom() {
+      setTimeout(() => {
+        const gallery = document.querySelector('.flex.gap-4');
+        const container = gallery?.children[1];
+        const img = container?.querySelector('img');
+        
+        if (container && img) {
+          container.addEventListener('mousemove', e => {
+            const rect = container.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            img.style.transformOrigin = `${x}% ${y}%`;
+            img.style.transform = 'scale(2)';
+          });
+          
+          container.addEventListener('mouseleave', () => {
+            img.style.transform = 'scale(1)';
+            img.style.transformOrigin = 'center';
+          });
+        }
+      }, 200);
+    }
+  }
+}
 
-/****** */
+/**** Navbar ****/
+fetch("navbar.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("navbar").innerHTML = html;
+  });                   
 
 
