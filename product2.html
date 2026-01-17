@@ -68,18 +68,16 @@
     </p>
 
     <!-- Quantity + Button -->
-    <div class="flex items-center gap-4 pt-4" x-data="productApp()" x-init="init()">
+    <div class="flex items-center gap-4 pt-4">
 
       <!-- Quantity -->
       <div class="flex items-center border rounded-full overflow-hidden">
       </div>
 
       <!-- Checkout -->
-  <button
-    class="flex-1 bg-[#e2c600] hover:bg-[#eed219] text-white py-4 rounded-full font-semibold shadow-lg transition"
-    @click="openPrefilledForm(product.name, product.price)"
-  >
-        Checkout
+      <button id="checkoutBtn"
+              class="flex-1 bg-[#e2c600] hover:bg-[#eed219] text-white  border-black py-4 rounded-full font-semibold shadow-lg transition">
+        Checkout with HitPay
       </button>
     </div>
 
@@ -131,6 +129,5 @@
     </form>
   </div>
 </div>
-
 </body>
 </html>

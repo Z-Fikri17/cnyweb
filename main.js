@@ -212,6 +212,16 @@ function productsApp() {
         this.initZoom();
       });
     },
+
+        // ✅ Open prefilled Google Form
+    openPrefilledForm(productName, price) {
+      const FORM_ID = '1FAIpQLScUncZJlvq3tOkd5liRInFhWoC8V1NQoOQuzXx3PiHUMp_xcg';
+      const ORDER_ENTRY_ID = '1314933134';
+      const encoded = encodeURIComponent(`${productName} - ${price}`);
+      const url = `https://docs.google.com/forms/d/e/${FORM_ID}/viewform?entry.${ORDER_ENTRY_ID}=${encoded}`;
+      window.open(url, '_blank'); // 🔹 Must open in new tab for prefill
+    },
+
     initCheckout() {
       const checkoutBtn = document.getElementById('checkoutBtn');
       const modal = document.getElementById('customerModal');
